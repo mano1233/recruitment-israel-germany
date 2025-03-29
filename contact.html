@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>צור קשר - MRB Handels GmbH</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
 </head>
 <body>
     <header>
@@ -49,7 +55,7 @@
 
                 <div class="contact-form">
                     <h2>שלחו לנו הודעה</h2>
-                    <form>
+                    <form id="contact-form">
                         <div class="form-group">
                             <label for="name">שם מלא</label>
                             <input type="text" id="name" name="name" required>
@@ -67,6 +73,12 @@
                             <textarea id="message" name="message" required></textarea>
                         </div>
                         <button type="submit" class="submit-button">שלח הודעה</button>
+                        <div id="success-message" class="success-message" style="display: none;">
+                            ההודעה נשלחה בהצלחה! נחזור אליך בהקדם.
+                        </div>
+                        <div id="error-message" class="error-message" style="display: none;">
+                            אירעה שגיאה בשליחת ההודעה. אנא נסה שוב מאוחר יותר.
+                        </div>
                     </form>
                 </div>
             </div>
