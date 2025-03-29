@@ -491,17 +491,17 @@ footer {
 
 /* Nursing page styles */
 .nursing-section {
-    padding: 3rem 2rem;
-    background-color: var(--white);
+    padding: 2rem 1rem;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .nursing-content {
     max-width: 800px;
     margin: 0 auto;
-    text-align: center;
+    text-align: right;
     font-size: 1.1rem;
     line-height: 1.6;
     color: #333;
@@ -514,17 +514,19 @@ footer {
 .nursing-stats {
     display: flex;
     justify-content: center;
-    gap: 4rem;
+    gap: 2rem;
     margin: 3rem 0;
+    flex-wrap: wrap;
 }
 
 .stat-item {
     text-align: center;
+    min-width: 200px;
 }
 
 .stat-item h3 {
     font-size: 2.5rem;
-    color: var(--primary-blue);
+    color: #007bff;
     margin-bottom: 0.5rem;
 }
 
@@ -534,33 +536,107 @@ footer {
 }
 
 .nursing-requirements {
-    background-color: var(--white);
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 2rem 1rem;
 }
 
 .nursing-requirements h2 {
-    color: var(--primary-blue);
+    color: #007bff;
     margin-bottom: 1.5rem;
     text-align: center;
 }
 
-.nursing-requirements ul {
-    list-style: none;
-    padding: 0;
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
 }
 
-.nursing-requirements li {
+.requirement-card {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: right;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.requirement-card:hover {
+    transform: translateY(-5px);
+}
+
+.requirement-card h3 {
+    color: #007bff;
     margin-bottom: 1rem;
-    padding-right: 1.5rem;
-    position: relative;
+    font-size: 1.2rem;
 }
 
-.nursing-requirements li:before {
-    content: "•";
-    color: var(--primary-blue);
-    position: absolute;
-    right: 0;
+.requirement-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .nursing-section {
+        padding: 1rem;
+    }
+
+    .nursing-content {
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    .nursing-stats {
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .stat-item {
+        width: 100%;
+        min-width: unset;
+        padding: 1rem;
+    }
+
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+
+    .stat-item p {
+        font-size: 1rem;
+    }
+
+    .requirements-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0;
+    }
+
+    .requirement-card {
+        padding: 1.2rem;
+        margin: 0;
+    }
+
+    .requirement-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .requirement-card p {
+        font-size: 0.95rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
 }
 
 /* Industries section specific styles */
