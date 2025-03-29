@@ -30,39 +30,19 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
             
-            // Disable submit button
-            const submitButton = contactForm.querySelector('.submit-button');
-            submitButton.disabled = true;
-            submitButton.textContent = 'שולח...';
+            const name = contactForm.querySelector('#name').value;
+            const email = contactForm.querySelector('#email').value;
+            const phone = contactForm.querySelector('#phone').value;
+            const message = contactForm.querySelector('#message').value;
 
-            // Get form data
-            const formData = {
-                name: contactForm.querySelector('#name').value,
-                email: contactForm.querySelector('#email').value,
-                phone: contactForm.querySelector('#phone').value,
-                message: contactForm.querySelector('#message').value
-            };
+            const mailtoLink = `mailto:info@mrb-muenchen.de?subject=פנייה חדשה מ-${encodeURIComponent(name)}&body=${encodeURIComponent(
+                `שם: ${name}\n` +
+                `אימייל: ${email}\n` +
+                `טלפון: ${phone}\n\n` +
+                `הודעה:\n${message}`
+            )}`;
 
-            // Send email using EmailJS
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-                .then(function(response) {
-                    // Show success message
-                    document.getElementById('success-message').style.display = 'block';
-                    document.getElementById('error-message').style.display = 'none';
-                    
-                    // Reset form
-                    contactForm.reset();
-                })
-                .catch(function(error) {
-                    // Show error message
-                    document.getElementById('error-message').style.display = 'block';
-                    document.getElementById('success-message').style.display = 'none';
-                })
-                .finally(function() {
-                    // Re-enable submit button
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'שלח הודעה';
-                });
+            window.location.href = mailtoLink;
         });
     }
 }); 
