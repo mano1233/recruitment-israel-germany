@@ -23,17 +23,17 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
-    height: 70px;
+    height: 60px;
 }
 
 .logo-container {
-    padding: 0.5rem;
+    padding: 0.3rem;
     display: flex;
     align-items: center;
 }
 
 .logo-container img {
-    max-height: 50px;
+    max-height: 45px;
     width: auto;
 }
 
@@ -210,6 +210,20 @@ footer {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    header {
+        height: 50px;
+        padding: 0.3rem;
+    }
+
+    .logo-container {
+        padding: 0.2rem;
+    }
+
+    .logo-container img {
+        max-height: 30px;
+        width: auto;
+    }
+
     .hamburger-menu {
         display: block;
     }
@@ -279,15 +293,6 @@ footer {
 
     .whatsapp-link {
         font-size: 1rem;
-    }
-
-    .logo-container {
-        padding: 0.3rem;
-    }
-
-    .logo-container img {
-        max-height: 35px;
-        width: auto;
     }
 }
 
